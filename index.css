@@ -1,0 +1,146 @@
+
+
+*,::after,::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --yellow: #f1e730;
+  --red:#e81c2b;
+  --blue:#1eace8;
+  --light-blue: #7cd1f9;
+  --light-grey: #c4d6e5;
+  --black: #000403;
+  --white: #fff;
+
+  --radius: 0.5rem;
+
+  --dai-10: 50px;
+  --dai-20: 130px;
+  --dai-30: 190px;
+  --dai-40: 240px;
+  --dai-50: 300px;
+  --modal-box-width: 360px;
+  --modal-box-height: 140px;
+}
+
+main{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  background-color: rgb(159, 159, 159);
+}
+
+.circle-container{
+  width: var(--dai-50);
+  height: var(--dai-50);
+  position: relative;
+}
+
+.circle{
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.circle-10{
+  background-color: var(--yellow);
+  width: var(--dai-10);
+  height: var(--dai-10);
+}
+
+.circle-20{
+  background-color: var(--red);
+  width: var(--dai-20);
+  height: var(--dai-20);
+}
+
+.circle-30{
+  background-color: var(--blue);
+  width: var(--dai-30);
+  height: var(--dai-30);
+}
+
+.circle-40{
+  background-color: var(--black);
+  width: var(--dai-40);
+  height: var(--dai-40);
+}
+
+.circle-50{
+  background-color: var(--white);
+  width: var(--dai-50);
+  height: var(--dai-50);
+}
+
+.modal-backdrop{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.6s linear;
+}
+
+.modal-box{
+  height: var(--modal-box-height);
+  max-width: var(--modal-box-width);
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+
+  position: relative;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+button{
+  padding: 0.8rem 1.5rem;
+  background-color: var(--light-blue);
+  border: 2px solid var(--light-grey);
+  border-radius: var(--radius);
+
+  outline: white solid 2px;
+  outline-offset: -4px;
+  text-transform: uppercase;
+
+  align-self: flex-end;
+}
+
+.animate-box{
+  animation-name: shake;
+  animation-duration: 0.3s;
+}
+
+@keyframes shake {
+  0%{
+  transform: translate(-50%,-50%) scale(0.9);
+  }
+
+  25%{
+    transform: translate(-50%,-50%) scale(1);
+  }
+
+  50%{
+    transform: translate(-50%,-50%) scale(0.9);
+  }
+
+  100%{
+    transform: translate(-50%,-50%) scale(1);    
+  }
+}
